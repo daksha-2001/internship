@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Hello</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
+  <style>
+
+		html {
+  height: 1400px;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+  position: absolute;
+  bottom:-1300px;
+  left: 50%;
+  width: 600px;
+  height:1300px;
+  padding: 40px;
+
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a button{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: -10px;
+  letter-spacing: 4px
+
+}
+
+.login-box a button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box a button span {
+  position: absolute;
+  display: block;
+
+}
+
+.login-box a button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+.cont {
+display: inline;
+position: relative;
+padding-left: 30px;
+margin-bottom: 10px;
+cursor: pointer;
+font-size: 18px;
+color:white;
+}
+.cont input {
+position: absolute;
+opacity: 0;
+}
+.radio_class {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #eee;
+border-radius: 25%;
+}
+.cont:hover input ~ .radio_class {
+background-color: #4863A0;
+}
+.cont input:checked ~ .radio_class {
+background-color: #728C00;
+}
+
+.cont .radio_class:after {
+top: 10px;
+left: 10px;
+width: 10px;
+height: 10px;
+border-radius: 80%;
+background: white;
+}
+h4{
+color:white;
+padding:20px;
+}
+
+
+
+
+.slider {
+  position:absolute;
+
+  left:43%;
+  transform:translate(-50%,-50%);
+
+  display:flex;
+  align-items:center;
+
+}
+.slider p {
+  font-size:18px;
+  font-weight:600;
+  font-family:sans-serif;
+  padding-left:20px;
+  color:#00acee;
+}
+.slider input[type="range"] {
+  -webkit-appearance:none !important;
+  width:350px;
+  height:1px;
+  background:#00acee;
+  border:none;
+  outline:none;
+}
+.slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance:none !important;
+  width:20px;
+  height:20px;
+  background:#f5f5f5;
+  border:2px solid #00acee;
+  border-radius:50%;
+  cursor:pointer;
+}
+.slider input[type="range"]::-webkit-slider-thumb:hover {
+  background:#00acee;
+}
+img{
+position-relative;
+float:right;
+}
+* {
+  box-sizing: border-box;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #888;
+  margin-top: 25px;
+
+
+}
+
+.custom-select select {
+  display: block;
+  width: 440px;
+  min-height: 35px;
+  background: #cbe7ff;
+  border-radius: 10px;
+  border: 2px solid #2196F3;
+  outline: none;
+  padding: 0 20px 0 10px;
+
+  margin-top: 5px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  color:#2f3640;
+}
+
+.custom-select::after {
+  content: '';
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #222;
+  display: inline-block;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.custom-select .selector-options {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  background: #11436b;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 1;
+  width: 96%;
+  position: absolute;
+  left: 2%;
+  top: 100%;
+}
+
+.custom-select .selector-options li {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-select .selector-options li:hover {
+  background: #03A9F4;
+}
+
+	</style>
+
+</head>
+<body>
+
+<h4 style="position:absolute;left:40%;font-family: Trirong,serif;font-size:30px;color:cornflowerblue;">Income Prediction</h4>
+<div class="login-box">
+  <form action="{{ url_for('predict')}}"method="post">
+  <h4>Your Age</h4>
+
+     <div class="slider">
+    <input type="range" min="10" max="90" value="20" oninput="rangeValue.innerText = this.value" name="age">
+    <p id="rangeValue">20</p>
+  </div><br>
+      <label class="custom-select">
+        <h4 style="margin-top:-30px;">Workclass</h4>
+      <select name="workclass">
+        <option value="Private">Private</option>
+        <option value="Self-emp">Self-emp</option>
+        <option value="Gov">Gov</option>
+      </select>
+    </label>
+    <br>
+
+      <h4> Marital status </h4>
+<label class="cont">Single &emsp;&emsp;&emsp;
+<input type="radio" checked="checked" name="marital_status" class="rad" value=0>
+<span class="radio_class"></span>
+</label>
+
+<label class="cont">Married
+<input type="radio" name="marital_status" class="rad" value=1>
+<span class="radio_class"></span>
+</label>
+      <br><br>
+<h4>Hours worked per week</h4>
+
+     <div class="slider">
+    <input type="range" min="10" max="40" value="20" oninput="rangeValue1.innerText = this.value" name="hours">
+    <p id="rangeValue1">20</p>
+  </div><br>
+
+<h4>Gender </h4>
+<label class="cont">Male &emsp;&emsp;&emsp;
+<input type="radio" checked="checked" name="gender" class="rad" value=0>
+<span class="radio_class" style="right:20px;"></span>
+</label>
+<label class="cont">Female
+<input type="radio" name="gender" class="rad" value=1>
+<span class="radio_class"></span>
+</label><br>
+
+    <h4> Race </h4>
+
+<label class="cont">Black &emsp;&emsp;&emsp;
+<input type="radio" name="race" checked="checked" class="rad" value="black">
+<span class="radio_class"></span>
+</label>
+
+    <label class="cont">Others
+<input type="radio" name="race" class="rad" value="others">
+<span class="radio_class"></span>
+</label>
+<br>
+
+<h4> Gain or Loss </h4>
+<label class="cont">Gain &emsp;&emsp;&emsp;
+<input type="radio" checked="checked" name="gainorloss" class="rad" value="1">
+<span class="radio_class"></span>
+</label>
+
+<label class="cont">Loss &emsp;&emsp;&emsp;
+<input type="radio" name="gainorloss" class="rad" value="-1">
+<span class="radio_class"></span>
+</label>
+    <label class="cont">None
+<input type="radio" name="gainorloss" class="rad" value="0">
+<span class="radio_class"></span>
+</label>
+
+  <h4> Country </h4>
+<label class="cont">Mexico &emsp;&emsp;&emsp;
+<input type="radio" checked="checked" name="country" class="rad" value="Mexico">
+<span class="radio_class"></span>
+</label>
+
+<label class="cont">United States &emsp;&emsp;&emsp;
+<input type="radio" name="country" class="rad" value="United States">
+<span class="radio_class"></span>
+</label>
+    <label class="cont">Others
+<input type="radio" name="country" class="rad" value="Others">
+<span class="radio_class"></span>
+</label>
+      &emsp;
+    <h4> Do you have your own family? </h4>
+<label class="cont"> Yes &emsp;&emsp;&emsp;
+<input type="radio" checked="checked" name="child" class="rad" value="yes">
+<span class="radio_class"></span>
+</label>
+
+
+<label class="cont">No
+<input type="radio" name="child" class="rad" value="no">
+<span class="radio_class"></span>
+
+</label><br><br>
+<label class="custom-select">
+        <h4 style="margin-top:-30px;">Education</h4>
+      <select name="Education">
+        <option value="Doctorate">Doctorate</option>
+        <option value="school">School</option>
+        <option value="HS-grad">HS-grad</option>
+        <option value="higher-edu">Higher-edu</option>
+        <option value="Masters">Masters</option>
+        </select>
+    </label>
+    <script src="{{url_for('static',filename='js/main.js')}}"></script>
+
+
+    <br><br><br><br>
+    <a href="#"><button style="background:linear-gradient(360deg, transparent, #03e9f4);border-radius:10px;">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit</button>
+    </a>
+  </form>
+</div>
+
+
+</body>
+</html>
+
+
